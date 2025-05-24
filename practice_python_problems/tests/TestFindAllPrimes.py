@@ -1,20 +1,16 @@
 import unittest
 
-from src.CapitalizeFirstChar import CapitalizeFirstChar
+from src.FindAllPrimes import FindAllPrimes
 
 
-class TestCapitalizeFirstChar(unittest.TestCase):
+class TestFindAllPrimes(unittest.TestCase):
     def setUp(self):
-        self.capitalizeFirstCharacter = CapitalizeFirstChar()
-
-    def test_emptyString(self):
-        self.assertEqual("", self.capitalizeFirstCharacter.convert_char_to_cap(""))
-
-    def test_nullString(self):
-        self.assertEqual("", self.capitalizeFirstCharacter.convert_char_to_cap(None))
-
+        self.allPrimeNums = FindAllPrimes()
     def test_convert_char_to_cap(self):
-        test_words = "hello there! mister"
-        test_expected = "Hello There! Mister"
+        expected_primes = [2, 3, 5, 7]
+        self.assertEqual(expected_primes, self.allPrimeNums.findAllPrimes(10))
 
-        self.assertEqual(test_expected, self.capitalizeFirstCharacter.convert_char_to_cap(test_words))
+
+if __name__ == "__main__":
+    unittest.main()
+
